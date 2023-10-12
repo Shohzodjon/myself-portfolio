@@ -1,10 +1,10 @@
 //  DOM selections
 let gridBox = document.querySelector(".project__grid");
 
-let btn = document.querySelector(".toggle");
-btn.addEventListener("click", function () {
-  document.body.classList.toggle("dark-theme");
-});
+// let btn = document.querySelector(".toggle");
+// btn.addEventListener("click", function () {
+//   document.body.classList.toggle("dark-theme");
+// });
 
 let card = "";
 
