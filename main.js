@@ -1,10 +1,48 @@
 //  DOM selections
 let gridBox = document.querySelector(".project__grid");
+let btn = document.querySelector(".toggle");
+let sunIcon = document.querySelector(".weather__icon");
+const hiddenElements = document.querySelectorAll(".hidden");
+const stackitems = document.querySelectorAll(".hidden2");
 
-// let btn = document.querySelector(".toggle");
-// btn.addEventListener("click", function () {
-//   document.body.classList.toggle("dark-theme");
-// });
+window.addEventListener("scroll", function () {
+  let topVal = window.pageYOffset;
+  let nav = document.querySelector("nav");
+  if (topVal > 100) {
+    nav.classList.add("active__nav");
+  } else {
+    nav.classList.remove("active__nav");
+  }
+});
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    } else {
+      entry.target.classList.remove("show");
+    }
+  });
+});
+
+hiddenElements.forEach((hidden) => observer.observe(hidden));
+
+const stackObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    } else {
+      entry.target.classList.remove("show");
+    }
+  });
+});
+
+stackitems.forEach((item) => stackObserver.observe(item));
+
+btn.addEventListener("click", function () {
+  document.body.classList.toggle("dark-theme");
+  btn.classList.toggle("dark__btn");
+});
 
 let card = "";
 
