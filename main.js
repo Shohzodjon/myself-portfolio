@@ -9,6 +9,8 @@ let menuIcon = document.querySelector(".nav__menu");
 let blur = document.querySelector(".blur__effect");
 let closeBtn = document.querySelector(".close__btn");
 let responseLink = document.querySelectorAll(".respon__link");
+let headerFlex = document.querySelector(".header__flex");
+let avatarImg = document.querySelector(".avatar__img");
 
 window.addEventListener("scroll", function () {
   let topVal = window.pageYOffset;
@@ -69,6 +71,16 @@ responseLink.forEach((item) => {
   });
 });
 
+//  paralax effect
+headerFlex.addEventListener("mouseover", (e) => {
+  let x = e.pageX;
+  let y = e.pageY;
+
+  avatarImg.style.transform = `translate(${(x / 100) * 8}px, ${
+    (y / 100) * 8
+  }px)`;
+});
+
 let card = "";
 
 const projects = [
@@ -87,6 +99,55 @@ const projects = [
     tools: "HTML5 , CSS3, React , Context API",
     demo: "ttps://mini-ecommer-site.netlify.app/",
     git: "https://github.com/Shohzodjon/new-project",
+  },
+  {
+    title: "Artificial Intelligence",
+    desc: "Landing page website, full responsive design",
+    imgUrl: "./assets/images/AI.png",
+    tools: "HTML5 , CSS3, React ",
+    demo: "https://steady-caramel-6e94f8.netlify.app",
+    git: "https://github.com/Shohzodjon/albison-academy",
+  },
+  {
+    title: "Asia University",
+    desc: "Full responsive design website",
+    imgUrl: "./assets/images/samuni.png",
+    tools: "HTML5 , Tailwindcss, Vuex, Vue3 ",
+    demo: "https://sam-university.netlify.app",
+    git: "https://github.com/Shohzodjon/samUniversity",
+  },
+  {
+    title: "ZTY , electric car charging station",
+    desc: "This site lists electric vehicle charging locations, showing the closest charging station to your location.",
+    imgUrl: "./assets/images/zty.png",
+    tools: "HTML5 , Tailwindcss, Vuex, Vue3 ",
+    demo: "https://zty-charged.netlify.app",
+    git: "https://github.com/Shohzodjon/landingPage",
+  },
+  {
+    title: "Ice cream website",
+    desc: "This website make custom scroll animation , I use pure javascript as interSectionObserver() function ",
+    imgUrl: "./assets/images/ice.png",
+    tools: "HTML5, Sass, Javascript",
+    demo: "https://observation-project.netlify.app",
+    git: "https://github.com/Shohzodjon/Portfolio-Ice-cream",
+  },
+  {
+    title: "Ali express clone website",
+    desc: "On this site, the user can buy the product he likes. The function of deleting products has also been added.",
+    imgUrl: "./assets/images/aliexpress.png",
+    tools: "HTML5, CSS3, React, Context API",
+    demo: "https://aliexpress-clone22.netlify.app",
+    git: "https://github.com/Shohzodjon/e-commerce",
+  },
+
+  {
+    title: "UIC Group company  website",
+    desc: "Full, real website. ",
+    imgUrl: "./assets/images/uic.png",
+    tools: "HTML5,Tailwindcss, Vue3 , Pinia, Typescript, StoryBook, Gsap",
+    demo: "https://uic.group/",
+    git: "https://github.com/Shohzodjon/uic-website",
   },
 ];
 
