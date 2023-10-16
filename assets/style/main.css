@@ -30,6 +30,8 @@ html {
 body {
   background-color: var(--clr-bg);
   transition: all linear 1s;
+  width: 100vw;
+  overflow-x: hidden;
 }
 a {
   text-decoration: none;
@@ -154,7 +156,7 @@ nav {
 }
 /*  header style */
 header {
-  padding: 14rem 0 8rem;
+  padding: 9rem 0 8rem;
 }
 .header__flex {
   display: flex;
@@ -395,6 +397,61 @@ footer {
   font-size: 2rem;
 }
 
+/*  responsive navbar  */
+
+.blur__effect {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(68, 85, 68, 0.8);
+  padding: 3rem;
+  bottom: 0;
+  z-index: 9999;
+  transition: all 0.4s linear;
+  transform: translateX(-100%);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.active__blur {
+  transform: translateX(0);
+}
+
+.response__navbar {
+  background: #fff;
+  width: 180px;
+  padding: 10px 18px;
+  border-radius: 10px;
+  height: 260px;
+  position: fixed;
+  right: 10px;
+  top: 70px;
+  transform: rotate(-90deg);
+  transform-origin: left -50%;
+  transition: all 0.7s linear;
+  z-index: 99999;
+  opacity: 0;
+}
+.active__navbar {
+  transform: rotate(0);
+  transition: all 0.4s linear;
+  opacity: 1;
+}
+.response__navbar ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.response__navbar ul li:first-child {
+  align-self: flex-end;
+  margin-bottom: 5px;
+}
+.close__btn {
+  border: none;
+  background: none;
+}
 /*   responsive media query  */
 /*  375px 576px, 768px, 992px, and 1200px */
 @media screen and (min-width: 375px) and (max-width: 576px) {
@@ -899,10 +956,26 @@ footer {
   footer {
     padding: 3rem 0;
   }
+
+  .blur__effect,
+  .response__navbar {
+    display: none;
+  }
 }
 
 @media screen and (min-width: 1201px) and (max-width: 1210px) {
   .container {
     padding: 0 15px;
+  }
+  .blur__effect,
+  .response__navbar {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1211px) {
+  .blur__effect,
+  .response__navbar {
+    display: none;
   }
 }
